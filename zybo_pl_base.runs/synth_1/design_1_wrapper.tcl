@@ -79,7 +79,6 @@ set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir /home/morgan/src/mipalgu/zybo_pl_base/zybo_pl_base.cache/wt [current_project]
 set_property parent.project_path /home/morgan/src/mipalgu/zybo_pl_base/zybo_pl_base.xpr [current_project]
-set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part_repo_paths {/home/morgan/.Xilinx/Vivado/2022.2/xhub/board_store/xilinx_board_store} [current_project]
@@ -96,19 +95,6 @@ set_property used_in_implementation false [get_files -all /home/morgan/src/mipal
 set_property used_in_implementation false [get_files -all /home/morgan/src/mipalgu/zybo_pl_base/zybo_pl_base.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0_board.xdc]
 set_property used_in_implementation false [get_files -all /home/morgan/src/mipalgu/zybo_pl_base/zybo_pl_base.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0.xdc]
 set_property used_in_implementation false [get_files -all /home/morgan/src/mipalgu/zybo_pl_base/zybo_pl_base.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/morgan/src/mipalgu/zybo_pl_base/zybo_pl_base.gen/sources_1/bd/design_1/ip/design_1_PmodCAN_0_0/src/PmodCAN_axi_gpio_0_0/PmodCAN_axi_gpio_0_0_board.xdc]
-set_property used_in_implementation false [get_files -all /home/morgan/src/mipalgu/zybo_pl_base/zybo_pl_base.gen/sources_1/bd/design_1/ip/design_1_PmodCAN_0_0/src/PmodCAN_axi_gpio_0_0/PmodCAN_axi_gpio_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/morgan/src/mipalgu/zybo_pl_base/zybo_pl_base.gen/sources_1/bd/design_1/ip/design_1_PmodCAN_0_0/src/PmodCAN_axi_gpio_0_0/PmodCAN_axi_gpio_0_0.xdc]
-set_property used_in_implementation false [get_files -all /home/morgan/src/mipalgu/zybo_pl_base/zybo_pl_base.gen/sources_1/bd/design_1/ip/design_1_PmodCAN_0_0/src/PmodCAN_axi_quad_spi_0_0/PmodCAN_axi_quad_spi_0_0_board.xdc]
-set_property used_in_implementation false [get_files -all /home/morgan/src/mipalgu/zybo_pl_base/zybo_pl_base.gen/sources_1/bd/design_1/ip/design_1_PmodCAN_0_0/src/PmodCAN_axi_quad_spi_0_0/PmodCAN_axi_quad_spi_0_0.xdc]
-set_property used_in_implementation false [get_files -all /home/morgan/src/mipalgu/zybo_pl_base/zybo_pl_base.gen/sources_1/bd/design_1/ip/design_1_PmodCAN_0_0/src/PmodCAN_axi_quad_spi_0_0/PmodCAN_axi_quad_spi_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/morgan/src/mipalgu/zybo_pl_base/zybo_pl_base.gen/sources_1/bd/design_1/ip/design_1_PmodCAN_0_0/src/PmodCAN_axi_quad_spi_0_0/PmodCAN_axi_quad_spi_0_0_clocks.xdc]
-set_property used_in_implementation false [get_files -all /home/morgan/src/mipalgu/zybo_pl_base/zybo_pl_base.gen/sources_1/bd/design_1/ip/design_1_PmodCAN_0_0/src/PmodCAN_pmod_bridge_0_0/PmodCAN_pmod_bridge_0_0_board.xdc]
-set_property used_in_implementation false [get_files -all /home/morgan/src/mipalgu/zybo_pl_base/zybo_pl_base.gen/sources_1/bd/design_1/ip/design_1_PmodCAN_0_0/src/PmodCAN_pmod_bridge_0_0/src/pmod_concat_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/morgan/src/mipalgu/zybo_pl_base/zybo_pl_base.gen/sources_1/bd/design_1/ip/design_1_PmodCAN_0_0/design_1_PmodCAN_0_0_board.xdc]
-set_property used_in_implementation false [get_files -all /home/morgan/src/mipalgu/zybo_pl_base/zybo_pl_base.gen/sources_1/bd/design_1/ip/design_1_PmodCAN_0_0/src/PmodCAN_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/morgan/src/mipalgu/zybo_pl_base/zybo_pl_base.gen/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/morgan/src/mipalgu/zybo_pl_base/zybo_pl_base.gen/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/morgan/src/mipalgu/zybo_pl_base/zybo_pl_base.gen/sources_1/bd/design_1/design_1_ooc.xdc]
 
 OPTRACE "Adding files" END { }
@@ -126,8 +112,6 @@ set_property used_in_implementation false [get_files /home/morgan/src/mipalgu/zy
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
-
-read_checkpoint -auto_incremental -incremental /home/morgan/src/mipalgu/zybo_pl_base/zybo_pl_base.srcs/utils_1/imports/synth_1/design_1_wrapper.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
