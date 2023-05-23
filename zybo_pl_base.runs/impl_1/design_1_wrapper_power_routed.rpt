@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2022.2 (lin64) Build 3671981 Fri Oct 14 04:59:54 MDT 2022
-| Date             : Tue Mar 21 15:17:17 2023
+| Date             : Tue May 23 11:51:49 2023
 | Host             : ibuntu running 64-bit Ubuntu 22.04.2 LTS
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.541        |
+| Total On-Chip Power (W)  | 1.545        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.401        |
+| Dynamic (W)              | 1.405        |
 | Device Static (W)        | 0.141        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 67.2         |
@@ -49,21 +49,23 @@ Table of Contents
 1.1 On-Chip Components
 ----------------------
 
-+-------------------------+-----------+----------+-----------+-----------------+
-| On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
-+-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |    <0.001 |        3 |       --- |             --- |
-| Slice Logic             |    <0.001 |      192 |       --- |             --- |
-|   LUT as Logic          |    <0.001 |       14 |     53200 |            0.03 |
-|   Register              |    <0.001 |       30 |    106400 |            0.03 |
-|   Others                |     0.000 |      144 |       --- |             --- |
-|   LUT as Shift Register |     0.000 |        1 |     17400 |           <0.01 |
-| Signals                 |    <0.001 |       40 |       --- |             --- |
-| I/O                     |     0.001 |        5 |       125 |            4.00 |
-| PS7                     |     1.399 |        1 |       --- |             --- |
-| Static Power            |     0.141 |          |           |                 |
-| Total                   |     1.541 |          |           |                 |
-+-------------------------+-----------+----------+-----------+-----------------+
++--------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
++--------------------------+-----------+----------+-----------+-----------------+
+| Clocks                   |     0.003 |        4 |       --- |             --- |
+| Slice Logic              |    <0.001 |     2962 |       --- |             --- |
+|   LUT as Logic           |    <0.001 |      891 |     53200 |            1.67 |
+|   Register               |    <0.001 |     1390 |    106400 |            1.31 |
+|   CARRY4                 |    <0.001 |       18 |     13300 |            0.14 |
+|   LUT as Distributed RAM |    <0.001 |       12 |     17400 |            0.07 |
+|   LUT as Shift Register  |    <0.001 |       62 |     17400 |            0.36 |
+|   Others                 |     0.000 |      306 |       --- |             --- |
+| Signals                  |     0.001 |     2091 |       --- |             --- |
+| I/O                      |    <0.001 |        8 |       125 |            6.40 |
+| PS7                      |     1.399 |        1 |       --- |             --- |
+| Static Power             |     0.141 |          |           |                 |
+| Total                    |     1.545 |          |           |                 |
++--------------------------+-----------+----------+-----------+-----------------+
 
 
 1.2 Power Supply Summary
@@ -72,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.014 |       0.000 |      0.014 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.019 |       0.005 |      0.014 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.015 |       0.000 |      0.015 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -136,6 +138,7 @@ Table of Contents
 | Clock      | Domain                                                      | Constraint (ns) |
 +------------+-------------------------------------------------------------+-----------------+
 | clk_fpga_0 | design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0] |            20.0 |
+| clk_fpga_1 | design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1] |           200.0 |
 +------------+-------------------------------------------------------------+-----------------+
 
 
@@ -148,10 +151,14 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| design_1_wrapper         |     1.401 |
-|   design_1_i             |     1.400 |
+| design_1_wrapper         |     1.405 |
+|   design_1_i             |     1.404 |
+|     PmodCAN_0            |     0.002 |
+|       inst               |     0.002 |
 |     processing_system7_0 |     1.399 |
 |       inst               |     1.399 |
+|     ps7_0_axi_periph     |     0.003 |
+|       s00_couplers       |     0.002 |
 +--------------------------+-----------+
 
 

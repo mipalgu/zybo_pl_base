@@ -81,6 +81,7 @@ set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir /home/morgan/src/mipalgu/zybo_pl_base/zybo_pl_base.cache/wt [current_project]
 set_property parent.project_path /home/morgan/src/mipalgu/zybo_pl_base/zybo_pl_base.xpr [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part_repo_paths {/home/morgan/.Xilinx/Vivado/2022.2/xhub/board_store/xilinx_board_store} [current_project]
