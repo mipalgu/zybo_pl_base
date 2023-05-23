@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2022.2 (lin64) Build 3671981 Fri Oct 14 04:59:54 MDT 2022
-| Date             : Tue Mar 21 15:17:17 2023
+| Date             : Tue May 23 17:06:39 2023
 | Host             : ibuntu running 64-bit Ubuntu 22.04.2 LTS
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -58,8 +58,8 @@ Table of Contents
 |   Register              |    <0.001 |       30 |    106400 |            0.03 |
 |   Others                |     0.000 |      144 |       --- |             --- |
 |   LUT as Shift Register |     0.000 |        1 |     17400 |           <0.01 |
-| Signals                 |    <0.001 |       40 |       --- |             --- |
-| I/O                     |     0.001 |        5 |       125 |            4.00 |
+| Signals                 |    <0.001 |       43 |       --- |             --- |
+| I/O                     |     0.001 |        8 |       125 |            6.40 |
 | PS7                     |     1.399 |        1 |       --- |             --- |
 | Static Power            |     0.141 |          |           |                 |
 | Total                   |     1.541 |          |           |                 |

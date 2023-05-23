@@ -112,6 +112,8 @@ set_property used_in_implementation false [get_files /home/morgan/src/mipalgu/zy
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
+
+read_checkpoint -auto_incremental -incremental /home/morgan/src/mipalgu/zybo_pl_base/zybo_pl_base.srcs/utils_1/imports/synth_1/design_1_wrapper.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

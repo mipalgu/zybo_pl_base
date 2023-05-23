@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (lin64) Build 3671981 Fri Oct 14 04:59:54 MDT 2022
-| Date         : Tue Mar 21 15:17:17 2023
+| Date         : Tue May 23 17:06:39 2023
 | Host         : ibuntu running 64-bit Ubuntu 22.04.2 LTS
 | Command      : report_timing_summary -max_paths 10 -report_unconstrained -file design_1_wrapper_timing_summary_routed.rpt -pb design_1_wrapper_timing_summary_routed.pb -rpx design_1_wrapper_timing_summary_routed.rpx -warn_on_violation
 | Design       : design_1_wrapper
@@ -894,53 +894,6 @@ Slack (MET) :             0.174ns  (arrival time - required time)
   -------------------------------------------------------------------
                          slack                                  0.174    
 
-Slack (MET) :             0.186ns  (arrival time - required time)
-  Source:                 design_1_i/proc_sys_reset_0/U0/EXT_LPF/AUX_LPF[3].asr_lpf_reg[3]/C
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
-  Destination:            design_1_i/proc_sys_reset_0/U0/EXT_LPF/lpf_asr_reg/D
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
-  Path Group:             clk_fpga_0
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        0.278ns  (logic 0.226ns (81.235%)  route 0.052ns (18.765%))
-  Logic Levels:           1  (LUT5=1)
-  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.207ns
-    Source Clock Delay      (SCD):    0.907ns
-    Clock Pessimism Removal (CPR):    0.300ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_fpga_0 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           0.310     0.310    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=32, routed)          0.571     0.907    design_1_i/proc_sys_reset_0/U0/EXT_LPF/slowest_sync_clk
-    SLICE_X27Y89         FDRE                                         r  design_1_i/proc_sys_reset_0/U0/EXT_LPF/AUX_LPF[3].asr_lpf_reg[3]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X27Y89         FDRE (Prop_fdre_C_Q)         0.128     1.035 r  design_1_i/proc_sys_reset_0/U0/EXT_LPF/AUX_LPF[3].asr_lpf_reg[3]/Q
-                         net (fo=1, routed)           0.052     1.087    design_1_i/proc_sys_reset_0/U0/EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/asr_lpf[0]
-    SLICE_X27Y89         LUT5 (Prop_lut5_I4_O)        0.098     1.185 r  design_1_i/proc_sys_reset_0/U0/EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/lpf_asr_i_1/O
-                         net (fo=1, routed)           0.000     1.185    design_1_i/proc_sys_reset_0/U0/EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX_n_0
-    SLICE_X27Y89         FDRE                                         r  design_1_i/proc_sys_reset_0/U0/EXT_LPF/lpf_asr_reg/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_fpga_0 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           0.337     0.337    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=32, routed)          0.841     1.207    design_1_i/proc_sys_reset_0/U0/EXT_LPF/slowest_sync_clk
-    SLICE_X27Y89         FDRE                                         r  design_1_i/proc_sys_reset_0/U0/EXT_LPF/lpf_asr_reg/C
-                         clock pessimism             -0.300     0.907    
-    SLICE_X27Y89         FDRE (Hold_fdre_C_D)         0.092     0.999    design_1_i/proc_sys_reset_0/U0/EXT_LPF/lpf_asr_reg
-  -------------------------------------------------------------------
-                         required time                         -0.999    
-                         arrival time                           1.185    
-  -------------------------------------------------------------------
-                         slack                                  0.186    
-
 Slack (MET) :             0.189ns  (arrival time - required time)
   Source:                 design_1_i/proc_sys_reset_0/U0/SEQ/Core_reg/C
                             (rising edge-triggered cell FDSE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
@@ -1032,6 +985,53 @@ Slack (MET) :             0.199ns  (arrival time - required time)
                          arrival time                           1.226    
   -------------------------------------------------------------------
                          slack                                  0.199    
+
+Slack (MET) :             0.224ns  (arrival time - required time)
+  Source:                 design_1_i/proc_sys_reset_0/U0/EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            design_1_i/proc_sys_reset_0/U0/EXT_LPF/lpf_asr_reg/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        0.331ns  (logic 0.209ns (63.216%)  route 0.122ns (36.784%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.015ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.207ns
+    Source Clock Delay      (SCD):    0.908ns
+    Clock Pessimism Removal (CPR):    0.284ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.310     0.310    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=32, routed)          0.572     0.908    design_1_i/proc_sys_reset_0/U0/EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/slowest_sync_clk
+    SLICE_X26Y91         FDRE                                         r  design_1_i/proc_sys_reset_0/U0/EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X26Y91         FDRE (Prop_fdre_C_Q)         0.164     1.072 r  design_1_i/proc_sys_reset_0/U0/EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4/Q
+                         net (fo=2, routed)           0.122     1.193    design_1_i/proc_sys_reset_0/U0/EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/scndry_out
+    SLICE_X27Y89         LUT5 (Prop_lut5_I3_O)        0.045     1.238 r  design_1_i/proc_sys_reset_0/U0/EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/lpf_asr_i_1/O
+                         net (fo=1, routed)           0.000     1.238    design_1_i/proc_sys_reset_0/U0/EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX_n_0
+    SLICE_X27Y89         FDRE                                         r  design_1_i/proc_sys_reset_0/U0/EXT_LPF/lpf_asr_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.337     0.337    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=32, routed)          0.841     1.207    design_1_i/proc_sys_reset_0/U0/EXT_LPF/slowest_sync_clk
+    SLICE_X27Y89         FDRE                                         r  design_1_i/proc_sys_reset_0/U0/EXT_LPF/lpf_asr_reg/C
+                         clock pessimism             -0.284     0.923    
+    SLICE_X27Y89         FDRE (Hold_fdre_C_D)         0.092     1.015    design_1_i/proc_sys_reset_0/U0/EXT_LPF/lpf_asr_reg
+  -------------------------------------------------------------------
+                         required time                         -1.015    
+                         arrival time                           1.238    
+  -------------------------------------------------------------------
+                         slack                                  0.224    
 
 Slack (MET) :             0.230ns  (arrival time - required time)
   Source:                 design_1_i/proc_sys_reset_0/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2/C
