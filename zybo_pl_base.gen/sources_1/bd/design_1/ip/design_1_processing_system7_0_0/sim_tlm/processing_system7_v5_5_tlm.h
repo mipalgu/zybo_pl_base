@@ -137,20 +137,6 @@ class processing_system7_v5_5_tlm : public sc_core::sc_module   {
     sc_core::sc_in<sc_dt::sc_bv<1> >  GPIO_I;
     sc_core::sc_out<sc_dt::sc_bv<1> >  GPIO_O;
     sc_core::sc_out<sc_dt::sc_bv<1> >  GPIO_T;
-    sc_core::sc_in<bool> SPI0_SCLK_I;
-    sc_core::sc_out<bool> SPI0_SCLK_O;
-    sc_core::sc_out<bool> SPI0_SCLK_T;
-    sc_core::sc_in<bool> SPI0_MOSI_I;
-    sc_core::sc_out<bool> SPI0_MOSI_O;
-    sc_core::sc_out<bool> SPI0_MOSI_T;
-    sc_core::sc_in<bool> SPI0_MISO_I;
-    sc_core::sc_out<bool> SPI0_MISO_O;
-    sc_core::sc_out<bool> SPI0_MISO_T;
-    sc_core::sc_in<bool> SPI0_SS_I;
-    sc_core::sc_out<bool> SPI0_SS_O;
-    sc_core::sc_out<bool> SPI0_SS1_O;
-    sc_core::sc_out<bool> SPI0_SS2_O;
-    sc_core::sc_out<bool> SPI0_SS_T;
     sc_core::sc_out<bool> TTC0_WAVE0_OUT;
     sc_core::sc_out<bool> TTC0_WAVE1_OUT;
     sc_core::sc_out<bool> TTC0_WAVE2_OUT;
@@ -158,7 +144,6 @@ class processing_system7_v5_5_tlm : public sc_core::sc_module   {
     sc_core::sc_out<bool> USB0_VBUS_PWRSELECT;
     sc_core::sc_in<bool> USB0_VBUS_PWRFAULT;
     sc_core::sc_in<bool> M_AXI_GP0_ACLK;
-    sc_core::sc_in<sc_dt::sc_bv<3> >  IRQ_F2P;
     sc_core::sc_out<bool> FCLK_CLK0;
     sc_core::sc_out<bool> FCLK_RESET0_N;
     sc_core::sc_inout<sc_dt::sc_bv<54> >  MIO;

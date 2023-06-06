@@ -1,7 +1,7 @@
 --Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2022.2 (lin64) Build 3671981 Fri Oct 14 04:59:54 MDT 2022
---Date        : Tue May 23 16:59:46 2023
+--Date        : Tue Jun  6 20:16:53 2023
 --Host        : ibuntu running 64-bit Ubuntu 22.04.2 LTS
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -33,15 +33,7 @@ entity design_1_wrapper is
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
-    FIXED_IO_ps_srstb : inout STD_LOGIC;
-    jb_cs : out STD_LOGIC;
-    jb_int : in STD_LOGIC;
-    jb_miso : in STD_LOGIC;
-    jb_mosi : out STD_LOGIC;
-    jb_rst : out STD_LOGIC;
-    jb_rx0 : in STD_LOGIC;
-    jb_rx1 : in STD_LOGIC;
-    jb_sck : out STD_LOGIC
+    FIXED_IO_ps_srstb : inout STD_LOGIC
   );
 end design_1_wrapper;
 
@@ -68,15 +60,7 @@ architecture STRUCTURE of design_1_wrapper is
     FIXED_IO_ddr_vrp : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     FIXED_IO_ps_clk : inout STD_LOGIC;
-    FIXED_IO_ps_porb : inout STD_LOGIC;
-    jb_cs : out STD_LOGIC;
-    jb_mosi : out STD_LOGIC;
-    jb_miso : in STD_LOGIC;
-    jb_sck : out STD_LOGIC;
-    jb_int : in STD_LOGIC;
-    jb_rst : out STD_LOGIC;
-    jb_rx0 : in STD_LOGIC;
-    jb_rx1 : in STD_LOGIC
+    FIXED_IO_ps_porb : inout STD_LOGIC
   );
   end component design_1;
 begin
@@ -102,14 +86,6 @@ design_1_i: component design_1
       FIXED_IO_mio(53 downto 0) => FIXED_IO_mio(53 downto 0),
       FIXED_IO_ps_clk => FIXED_IO_ps_clk,
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
-      FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
-      jb_cs => jb_cs,
-      jb_int => jb_int,
-      jb_miso => jb_miso,
-      jb_mosi => jb_mosi,
-      jb_rst => jb_rst,
-      jb_rx0 => jb_rx0,
-      jb_rx1 => jb_rx1,
-      jb_sck => jb_sck
+      FIXED_IO_ps_srstb => FIXED_IO_ps_srstb
     );
 end STRUCTURE;

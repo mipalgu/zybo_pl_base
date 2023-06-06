@@ -59,20 +59,6 @@ module design_1_processing_system7_0_0 (
 GPIO_I, 
 GPIO_O, 
 GPIO_T, 
-SPI0_SCLK_I, 
-SPI0_SCLK_O, 
-SPI0_SCLK_T, 
-SPI0_MOSI_I, 
-SPI0_MOSI_O, 
-SPI0_MOSI_T, 
-SPI0_MISO_I, 
-SPI0_MISO_O, 
-SPI0_MISO_T, 
-SPI0_SS_I, 
-SPI0_SS_O, 
-SPI0_SS1_O, 
-SPI0_SS2_O, 
-SPI0_SS_T, 
 TTC0_WAVE0_OUT, 
 TTC0_WAVE1_OUT, 
 TTC0_WAVE2_OUT, 
@@ -118,7 +104,6 @@ M_AXI_GP0_RID,
 M_AXI_GP0_BRESP, 
 M_AXI_GP0_RRESP, 
 M_AXI_GP0_RDATA, 
-IRQ_F2P, 
 FCLK_CLK0, 
 FCLK_RESET0_N, 
 MIO, 
@@ -146,20 +131,6 @@ PS_PORB
 input [0 : 0] GPIO_I;
 output [0 : 0] GPIO_O;
 output [0 : 0] GPIO_T;
-input SPI0_SCLK_I;
-output SPI0_SCLK_O;
-output SPI0_SCLK_T;
-input SPI0_MOSI_I;
-output SPI0_MOSI_O;
-output SPI0_MOSI_T;
-input SPI0_MISO_I;
-output SPI0_MISO_O;
-output SPI0_MISO_T;
-input SPI0_SS_I;
-output SPI0_SS_O;
-output SPI0_SS1_O;
-output SPI0_SS2_O;
-output SPI0_SS_T;
 output TTC0_WAVE0_OUT;
 output TTC0_WAVE1_OUT;
 output TTC0_WAVE2_OUT;
@@ -205,7 +176,6 @@ input [11 : 0] M_AXI_GP0_RID;
 input [1 : 0] M_AXI_GP0_BRESP;
 input [1 : 0] M_AXI_GP0_RRESP;
 input [31 : 0] M_AXI_GP0_RDATA;
-input [2 : 0] IRQ_F2P;
 output FCLK_CLK0;
 output FCLK_RESET0_N;
 input [53 : 0] MIO;
