@@ -1,7 +1,7 @@
 --Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2022.2 (lin64) Build 3671981 Fri Oct 14 04:59:54 MDT 2022
---Date        : Tue Jun  6 20:16:53 2023
+--Date        : Wed Jun  7 17:54:49 2023
 --Host        : ibuntu running 64-bit Ubuntu 22.04.2 LTS
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -33,7 +33,15 @@ entity design_1_wrapper is
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
-    FIXED_IO_ps_srstb : inout STD_LOGIC
+    FIXED_IO_ps_srstb : inout STD_LOGIC;
+    ja_0bf : in STD_LOGIC;
+    ja_1bf : in STD_LOGIC;
+    ja_cs : out STD_LOGIC;
+    ja_int : in STD_LOGIC;
+    ja_miso : in STD_LOGIC;
+    ja_mosi : out STD_LOGIC;
+    ja_reset : out STD_LOGIC;
+    ja_sck : out STD_LOGIC
   );
 end design_1_wrapper;
 
@@ -60,7 +68,15 @@ architecture STRUCTURE of design_1_wrapper is
     FIXED_IO_ddr_vrp : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     FIXED_IO_ps_clk : inout STD_LOGIC;
-    FIXED_IO_ps_porb : inout STD_LOGIC
+    FIXED_IO_ps_porb : inout STD_LOGIC;
+    ja_cs : out STD_LOGIC;
+    ja_mosi : out STD_LOGIC;
+    ja_miso : in STD_LOGIC;
+    ja_sck : out STD_LOGIC;
+    ja_int : in STD_LOGIC;
+    ja_reset : out STD_LOGIC;
+    ja_0bf : in STD_LOGIC;
+    ja_1bf : in STD_LOGIC
   );
   end component design_1;
 begin
@@ -86,6 +102,14 @@ design_1_i: component design_1
       FIXED_IO_mio(53 downto 0) => FIXED_IO_mio(53 downto 0),
       FIXED_IO_ps_clk => FIXED_IO_ps_clk,
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
-      FIXED_IO_ps_srstb => FIXED_IO_ps_srstb
+      FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
+      ja_0bf => ja_0bf,
+      ja_1bf => ja_1bf,
+      ja_cs => ja_cs,
+      ja_int => ja_int,
+      ja_miso => ja_miso,
+      ja_mosi => ja_mosi,
+      ja_reset => ja_reset,
+      ja_sck => ja_sck
     );
 end STRUCTURE;

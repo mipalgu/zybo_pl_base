@@ -61,6 +61,20 @@ module design_1_processing_system7_0_0 (
   GPIO_I,
   GPIO_O,
   GPIO_T,
+  SPI1_SCLK_I,
+  SPI1_SCLK_O,
+  SPI1_SCLK_T,
+  SPI1_MOSI_I,
+  SPI1_MOSI_O,
+  SPI1_MOSI_T,
+  SPI1_MISO_I,
+  SPI1_MISO_O,
+  SPI1_MISO_T,
+  SPI1_SS_I,
+  SPI1_SS_O,
+  SPI1_SS1_O,
+  SPI1_SS2_O,
+  SPI1_SS_T,
   TTC0_WAVE0_OUT,
   TTC0_WAVE1_OUT,
   TTC0_WAVE2_OUT,
@@ -106,6 +120,7 @@ module design_1_processing_system7_0_0 (
   M_AXI_GP0_BRESP,
   M_AXI_GP0_RRESP,
   M_AXI_GP0_RDATA,
+  IRQ_F2P,
   FCLK_CLK0,
   FCLK_RESET0_N,
   MIO,
@@ -137,6 +152,34 @@ input wire [0 : 0] GPIO_I;
 output wire [0 : 0] GPIO_O;
 (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 GPIO_0 TRI_T" *)
 output wire [0 : 0] GPIO_T;
+(* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 SPI_1 SCK_I" *)
+input wire SPI1_SCLK_I;
+(* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 SPI_1 SCK_O" *)
+output wire SPI1_SCLK_O;
+(* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 SPI_1 SCK_T" *)
+output wire SPI1_SCLK_T;
+(* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 SPI_1 IO0_I" *)
+input wire SPI1_MOSI_I;
+(* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 SPI_1 IO0_O" *)
+output wire SPI1_MOSI_O;
+(* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 SPI_1 IO0_T" *)
+output wire SPI1_MOSI_T;
+(* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 SPI_1 IO1_I" *)
+input wire SPI1_MISO_I;
+(* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 SPI_1 IO1_O" *)
+output wire SPI1_MISO_O;
+(* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 SPI_1 IO1_T" *)
+output wire SPI1_MISO_T;
+(* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 SPI_1 SS_I" *)
+input wire SPI1_SS_I;
+(* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 SPI_1 SS_O" *)
+output wire SPI1_SS_O;
+(* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 SPI_1 SS1_O" *)
+output wire SPI1_SS1_O;
+(* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 SPI_1 SS2_O" *)
+output wire SPI1_SS2_O;
+(* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 SPI_1 SS_T" *)
+output wire SPI1_SS_T;
 output wire TTC0_WAVE0_OUT;
 output wire TTC0_WAVE1_OUT;
 output wire TTC0_WAVE2_OUT;
@@ -227,6 +270,9 @@ input wire [1 : 0] M_AXI_GP0_RRESP;
  4, NUM_WRITE_THREADS 4, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI_GP0 RDATA" *)
 input wire [31 : 0] M_AXI_GP0_RDATA;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME IRQ_F2P, SENSITIVITY LEVEL_HIGH:LEVEL_HIGH:LEVEL_HIGH, PortWidth 3" *)
+(* X_INTERFACE_INFO = "xilinx.com:signal:interrupt:1.0 IRQ_F2P INTERRUPT" *)
+input wire [2 : 0] IRQ_F2P;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME FCLK_CLK0, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 FCLK_CLK0 CLK" *)
 output wire FCLK_CLK0;
@@ -449,20 +495,20 @@ inout wire PS_PORB;
     .SPI0_SS1_O(),
     .SPI0_SS2_O(),
     .SPI0_SS_T(),
-    .SPI1_SCLK_I(1'B0),
-    .SPI1_SCLK_O(),
-    .SPI1_SCLK_T(),
-    .SPI1_MOSI_I(1'B0),
-    .SPI1_MOSI_O(),
-    .SPI1_MOSI_T(),
-    .SPI1_MISO_I(1'B0),
-    .SPI1_MISO_O(),
-    .SPI1_MISO_T(),
-    .SPI1_SS_I(1'B0),
-    .SPI1_SS_O(),
-    .SPI1_SS1_O(),
-    .SPI1_SS2_O(),
-    .SPI1_SS_T(),
+    .SPI1_SCLK_I(SPI1_SCLK_I),
+    .SPI1_SCLK_O(SPI1_SCLK_O),
+    .SPI1_SCLK_T(SPI1_SCLK_T),
+    .SPI1_MOSI_I(SPI1_MOSI_I),
+    .SPI1_MOSI_O(SPI1_MOSI_O),
+    .SPI1_MOSI_T(SPI1_MOSI_T),
+    .SPI1_MISO_I(SPI1_MISO_I),
+    .SPI1_MISO_O(SPI1_MISO_O),
+    .SPI1_MISO_T(SPI1_MISO_T),
+    .SPI1_SS_I(SPI1_SS_I),
+    .SPI1_SS_O(SPI1_SS_O),
+    .SPI1_SS1_O(SPI1_SS1_O),
+    .SPI1_SS2_O(SPI1_SS2_O),
+    .SPI1_SS_T(SPI1_SS_T),
     .UART0_DTRN(),
     .UART0_RTSN(),
     .UART0_TX(),
@@ -910,7 +956,7 @@ inout wire PS_PORB;
     .IRQ_P2F_SPI1(),
     .IRQ_P2F_UART1(),
     .IRQ_P2F_CAN1(),
-    .IRQ_F2P(3'B0),
+    .IRQ_F2P(IRQ_F2P),
     .Core0_nFIQ(1'B0),
     .Core0_nIRQ(1'B0),
     .Core1_nFIQ(1'B0),
