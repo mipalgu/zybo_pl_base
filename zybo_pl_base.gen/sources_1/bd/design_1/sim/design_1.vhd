@@ -1,7 +1,7 @@
 --Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2022.2 (lin64) Build 3671981 Fri Oct 14 04:59:54 MDT 2022
---Date        : Wed Jun  7 17:54:49 2023
+--Date        : Thu Jun  8 17:18:00 2023
 --Host        : ibuntu running 64-bit Ubuntu 22.04.2 LTS
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -40,11 +40,11 @@ entity design_1 is
     ja_int : in STD_LOGIC;
     ja_miso : in STD_LOGIC;
     ja_mosi : out STD_LOGIC;
-    ja_reset : out STD_LOGIC;
+    ja_reset : out STD_LOGIC_VECTOR ( 0 to 0 );
     ja_sck : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=3,numReposBlks=3,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_board_cnt=4,da_clkrst_cnt=3,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=4,numReposBlks=4,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_board_cnt=4,da_clkrst_cnt=3,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of design_1 : entity is "design_1.hwdef";
 end design_1;
@@ -148,25 +148,21 @@ architecture STRUCTURE of design_1 is
     dout : out STD_LOGIC_VECTOR ( 2 downto 0 )
   );
   end component design_1_xlconcat_0_0;
-  component design_1_proc_sys_reset_0_0 is
+  component design_1_xlconstant_0_0 is
   port (
-    slowest_sync_clk : in STD_LOGIC;
-    ext_reset_in : in STD_LOGIC;
-    aux_reset_in : in STD_LOGIC;
-    mb_debug_sys_rst : in STD_LOGIC;
-    dcm_locked : in STD_LOGIC;
-    mb_reset : out STD_LOGIC;
-    bus_struct_reset : out STD_LOGIC_VECTOR ( 0 to 0 );
-    peripheral_reset : out STD_LOGIC_VECTOR ( 0 to 0 );
-    interconnect_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 );
-    peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 )
+    dout : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  end component design_1_proc_sys_reset_0_0;
+  end component design_1_xlconstant_0_0;
+  component design_1_util_vector_logic_0_0 is
+  port (
+    Op1 : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    Res : out STD_LOGIC_VECTOR ( 2 downto 0 )
+  );
+  end component design_1_util_vector_logic_0_0;
   signal ja_0bf_1 : STD_LOGIC;
   signal ja_1bf_1 : STD_LOGIC;
   signal ja_int_1 : STD_LOGIC;
   signal ja_miso_1 : STD_LOGIC;
-  signal proc_sys_reset_0_mb_reset : STD_LOGIC;
   signal processing_system7_0_DDR_ADDR : STD_LOGIC_VECTOR ( 14 downto 0 );
   signal processing_system7_0_DDR_BA : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal processing_system7_0_DDR_CAS_N : STD_LOGIC;
@@ -183,7 +179,6 @@ architecture STRUCTURE of design_1 is
   signal processing_system7_0_DDR_RESET_N : STD_LOGIC;
   signal processing_system7_0_DDR_WE_N : STD_LOGIC;
   signal processing_system7_0_FCLK_CLK0 : STD_LOGIC;
-  signal processing_system7_0_FCLK_RESET0_N : STD_LOGIC;
   signal processing_system7_0_FIXED_IO_DDR_VRN : STD_LOGIC;
   signal processing_system7_0_FIXED_IO_DDR_VRP : STD_LOGIC;
   signal processing_system7_0_FIXED_IO_MIO : STD_LOGIC_VECTOR ( 53 downto 0 );
@@ -193,11 +188,10 @@ architecture STRUCTURE of design_1 is
   signal processing_system7_0_SPI1_MOSI_O : STD_LOGIC;
   signal processing_system7_0_SPI1_SCLK_O : STD_LOGIC;
   signal processing_system7_0_SPI1_SS_O : STD_LOGIC;
+  signal util_vector_logic_0_Res : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal xlconcat_0_dout : STD_LOGIC_VECTOR ( 2 downto 0 );
-  signal NLW_proc_sys_reset_0_bus_struct_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal NLW_proc_sys_reset_0_interconnect_aresetn_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal NLW_proc_sys_reset_0_peripheral_aresetn_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal NLW_proc_sys_reset_0_peripheral_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal xlconstant_0_dout : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal NLW_processing_system7_0_FCLK_RESET0_N_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_M_AXI_GP0_ARVALID_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_M_AXI_GP0_AWVALID_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_M_AXI_GP0_BREADY_UNCONNECTED : STD_LOGIC;
@@ -262,8 +256,6 @@ architecture STRUCTURE of design_1 is
   attribute X_INTERFACE_PARAMETER of ja_1bf : signal is "XIL_INTERFACENAME INTR.JA_1BF, PortWidth 1, SENSITIVITY EDGE_FALLING";
   attribute X_INTERFACE_INFO of ja_int : signal is "xilinx.com:signal:interrupt:1.0 INTR.JA_INT INTERRUPT";
   attribute X_INTERFACE_PARAMETER of ja_int : signal is "XIL_INTERFACENAME INTR.JA_INT, PortWidth 1, SENSITIVITY EDGE_FALLING";
-  attribute X_INTERFACE_INFO of ja_reset : signal is "xilinx.com:signal:reset:1.0 RST.JA_RESET RST";
-  attribute X_INTERFACE_PARAMETER of ja_reset : signal is "XIL_INTERFACENAME RST.JA_RESET, INSERT_VIP 0, POLARITY ACTIVE_HIGH";
   attribute X_INTERFACE_INFO of ja_sck : signal is "xilinx.com:signal:clock:1.0 CLK.JA_SCK CLK";
   attribute X_INTERFACE_PARAMETER of ja_sck : signal is "XIL_INTERFACENAME CLK.JA_SCK, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0";
   attribute X_INTERFACE_INFO of DDR_addr : signal is "xilinx.com:interface:ddrx:1.0 DDR ADDR";
@@ -281,21 +273,8 @@ begin
   ja_int_1 <= ja_int;
   ja_miso_1 <= ja_miso;
   ja_mosi <= processing_system7_0_SPI1_MOSI_O;
-  ja_reset <= proc_sys_reset_0_mb_reset;
+  ja_reset(0) <= xlconstant_0_dout(0);
   ja_sck <= processing_system7_0_SPI1_SCLK_O;
-proc_sys_reset_0: component design_1_proc_sys_reset_0_0
-     port map (
-      aux_reset_in => '1',
-      bus_struct_reset(0) => NLW_proc_sys_reset_0_bus_struct_reset_UNCONNECTED(0),
-      dcm_locked => '1',
-      ext_reset_in => processing_system7_0_FCLK_RESET0_N,
-      interconnect_aresetn(0) => NLW_proc_sys_reset_0_interconnect_aresetn_UNCONNECTED(0),
-      mb_debug_sys_rst => '0',
-      mb_reset => proc_sys_reset_0_mb_reset,
-      peripheral_aresetn(0) => NLW_proc_sys_reset_0_peripheral_aresetn_UNCONNECTED(0),
-      peripheral_reset(0) => NLW_proc_sys_reset_0_peripheral_reset_UNCONNECTED(0),
-      slowest_sync_clk => processing_system7_0_FCLK_CLK0
-    );
 processing_system7_0: component design_1_processing_system7_0_0
      port map (
       DDR_Addr(14 downto 0) => DDR_addr(14 downto 0),
@@ -316,11 +295,11 @@ processing_system7_0: component design_1_processing_system7_0_0
       DDR_VRP => FIXED_IO_ddr_vrp,
       DDR_WEB => DDR_we_n,
       FCLK_CLK0 => processing_system7_0_FCLK_CLK0,
-      FCLK_RESET0_N => processing_system7_0_FCLK_RESET0_N,
+      FCLK_RESET0_N => NLW_processing_system7_0_FCLK_RESET0_N_UNCONNECTED,
       GPIO_I(0) => '0',
       GPIO_O(0) => NLW_processing_system7_0_GPIO_O_UNCONNECTED(0),
       GPIO_T(0) => NLW_processing_system7_0_GPIO_T_UNCONNECTED(0),
-      IRQ_F2P(2 downto 0) => xlconcat_0_dout(2 downto 0),
+      IRQ_F2P(2 downto 0) => util_vector_logic_0_Res(2 downto 0),
       MIO(53 downto 0) => FIXED_IO_mio(53 downto 0),
       M_AXI_GP0_ACLK => processing_system7_0_FCLK_CLK0,
       M_AXI_GP0_ARADDR(31 downto 0) => NLW_processing_system7_0_M_AXI_GP0_ARADDR_UNCONNECTED(31 downto 0),
@@ -385,11 +364,20 @@ processing_system7_0: component design_1_processing_system7_0_0
       USB0_VBUS_PWRFAULT => '0',
       USB0_VBUS_PWRSELECT => NLW_processing_system7_0_USB0_VBUS_PWRSELECT_UNCONNECTED
     );
+util_vector_logic_0: component design_1_util_vector_logic_0_0
+     port map (
+      Op1(2 downto 0) => xlconcat_0_dout(2 downto 0),
+      Res(2 downto 0) => util_vector_logic_0_Res(2 downto 0)
+    );
 xlconcat_0: component design_1_xlconcat_0_0
      port map (
       In0(0) => ja_int_1,
       In1(0) => ja_1bf_1,
       In2(0) => ja_0bf_1,
       dout(2 downto 0) => xlconcat_0_dout(2 downto 0)
+    );
+xlconstant_0: component design_1_xlconstant_0_0
+     port map (
+      dout(0) => xlconstant_0_dout(0)
     );
 end STRUCTURE;
